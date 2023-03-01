@@ -1,0 +1,31 @@
+//Question 1
+SELECT Customers.id, Customers.name
+FROM Customers
+LEFT JOIN Orders ON Customers.id = Orders.customerId
+WHERE Orders.id IS NULL;
+
+//Qustion 2
+
+SELECT *
+FROM Customers
+WHERE Reffered != 2
+
+//Question 3
+SELECT Country, count(*)
+FROM Customers
+group by Country
+having COUNT(*)>3
+
+//Question 4
+create proc dbo.spInsertEmployee
+as 
+begin
+
+insert into Employee(CustomerID, CustomerName, City, Country, Phone, State, Zip, Notes, Address)
+values(25, 'Alfreds Futterkiste', 'Berlin', 'Germany', '011220506', 'Kenya', 'tyu', '678', 'Some Address')
+update Customers
+set City = 'Nairobi'
+where CustomerID = 1
+select *
+from Customers
+end
