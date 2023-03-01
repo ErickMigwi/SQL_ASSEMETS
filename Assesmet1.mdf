@@ -15,6 +15,7 @@ SELECT Country, count(*)
 FROM Customers
 group by Country
 having COUNT(*)>3
+ORDER BY Country  DESC
 
 //Question 4
 create proc dbo.spInsertEmployee
